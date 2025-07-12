@@ -866,24 +866,6 @@ net
         console.log(`Server address format: user#${DOMAIN}:${SHARP_PORT}`)
     })
 
-app.get('/init', async (req, res) => {
-  try {
-    await sql`CREATE TABLE IF NOT EXISTS emails (
-      id SERIAL PRIMARY KEY,
-      sender TEXT NOT NULL,
-      recipient TEXT NOT NULL,
-      subject TEXT,
-      body TEXT,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )`;
-    res.send('✅ Database initialized');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('❌ Error initializing DB');
-  }
-});
-
-
 app.listen(HTTP_PORT, () => {
     console.log(`HTTP server listening on port ${HTTP_PORT}`)
 })
