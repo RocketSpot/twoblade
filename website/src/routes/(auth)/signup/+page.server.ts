@@ -5,7 +5,7 @@ import { sql } from '$lib/server/db';
 import { PUBLIC_DOMAIN } from '$env/static/public';
 import { getSessionScore, deleteSession_ } from '$lib/server/iq';
 import { validateUsername } from '$lib/utils';
-import { checkHardcore } from '../../../../websocket/src/moderation';
+import { checkHardcore } from '$lib/moderation';
 
 const SALT_ROUNDS = 10;
 
