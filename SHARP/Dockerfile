@@ -1,13 +1,12 @@
-FROM oven/bun:latest
+FROM oven/bun:1
 
 WORKDIR /app
 
-COPY SHARP/package*.json ./
+COPY . .
 
 RUN bun install
 
-COPY SHARP/. .
+EXPOSE 5000
+EXPOSE 5001
 
-EXPOSE 5000 5001
-
-CMD [ "bun", "run", "main.js" ]
+CMD ["bun", "main.js"]
