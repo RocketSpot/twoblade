@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 import { sql } from '$lib/server/db';
 import type { RequestEvent } from './$types';
-import { checkHardcore } from '../../../../../websocket/src/moderation';
+import { checkHardcore } from '$lib/moderation';
 
 export async function GET({ url }: RequestEvent) {
     const username = url.searchParams.get('username');
